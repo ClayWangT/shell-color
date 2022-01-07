@@ -1,6 +1,6 @@
 {
   "name": "react-shell-color",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "repository": {
     "type": "git",
     "url": "https://github.com/ClayWangT/shell-color"
@@ -18,7 +18,7 @@
   },
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
-  "typings": "es/index.d.ts",
+  "typings": "dist/index.d.ts",
   "gitHooks": {
     "pre-commit": "lint-staged"
   },
