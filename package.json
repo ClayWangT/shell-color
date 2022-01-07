@@ -1,7 +1,7 @@
 {
-  "private": true,
   "name": "react-shell-color",
   "version": "1.0.0",
+  "github:": "https://github.com/ClayWangT/shell-color",
   "scripts": {
     "start": "dumi dev",
     "docs:build": "dumi build",
