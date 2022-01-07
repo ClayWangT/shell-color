@@ -139,7 +139,7 @@ export default class ShellColor extends EventEmitter {
       case 'white':
         return '#FFFFFF';
       default:
-        throw sgrColor + ' is invalid SGR color name';
+        return sgrColor;
     }
   }
 

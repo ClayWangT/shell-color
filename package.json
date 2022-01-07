@@ -1,7 +1,10 @@
 {
   "name": "react-shell-color",
-  "version": "1.0.0",
-  "github:": "https://github.com/ClayWangT/shell-color",
+  "version": "1.0.2",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ClayWangT/shell-color"
+  },
   "scripts": {
     "start": "dumi dev",
     "docs:build": "dumi build",
@@ -13,7 +16,8 @@
     "test:coverage": "umi-test --coverage",
     "prepublishOnly": "npm run build"
   },
-  "module": "es/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
   "typings": "es/index.d.ts",
   "gitHooks": {
     "pre-commit": "lint-staged"
@@ -36,6 +40,7 @@
     "@types/jest": "^27.0.3",
     "@umijs/fabric": "^2.8.1",
     "@umijs/test": "^3.0.5",
+    "chalk": "^5.0.0",
     "dumi": "^1.1.0",
     "father-build": "^1.17.2",
     "gh-pages": "^3.0.0",

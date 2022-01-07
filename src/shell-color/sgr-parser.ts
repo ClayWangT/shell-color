@@ -72,7 +72,6 @@ export default class SGRParser extends EventEmitter {
   write(text: string) {
     // distinguish text and ansi escape code
     const fragments = text.split(ESCAPE_CODE_REG_FOR_SPLIT2);
-
     // transform each fragment
     fragments.forEach((fragment: string) => {
       const escapeMatch = fragment.match(ESCAPE_CODE_REG);

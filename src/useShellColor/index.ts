@@ -21,13 +21,13 @@ export default function useShellColor(text: string): {
       });
     });
 
-    // sc.on('lineEnd', function() {
-    //   const br = document.createElement('br')
-    //   setTags((inner) => {
-    //     inner.appendChild(br);
-    //     return inner;
-    //   })
-    // })
+    sc.on('lineEnd', function () {
+      const br = React.createElement('br');
+      setTags((inner) => {
+        inner.push(br);
+        return inner;
+      });
+    });
   }, []);
 
   useEffect(() => {
