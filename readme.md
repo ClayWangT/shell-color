@@ -52,4 +52,5 @@ sc.on('snippet', function (tag: React.Node, text: string, style: SGRStyle) {
 
 # ChangeLog
 
+- 1.1.0 performance optimize
 - 1.0.0 init project

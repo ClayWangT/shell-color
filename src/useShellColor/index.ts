@@ -7,32 +7,29 @@ export default function useShellColor(text: string): {
   shellColor: ShellColor;
 } {
   const sc = useRef(new ShellColor()).current;
+  const reactTags = useRef<React.ReactNode[]>([]);
   const [tags, setTags] = useState<React.ReactNode[]>([]);
 
   useEffect(() => {
     sc.on('reset', function () {
+      reactTags.current = [];
       setTags([]);
     });
 
     sc.on('snippet', function (tag: React.ReactNode, text: string, style: SGRStyle) {
-      setTags((inner) => {
-        inner.push(tag);
-        return inner;
-      });
+      reactTags.current.push(tag);
     });
 
     sc.on('lineEnd', function () {
       const br = React.createElement('br');
-      setTags((inner) => {
-        inner.push(br);
-        return inner;
-      });
+      reactTags.current.push(br);
     });
   }, []);
 
   useEffect(() => {
     sc.reset().write(text);
-  }, [text]);
+    setTags(reactTags.current);
+  }, [text, reactTags]);
 
   return {
     tags,
